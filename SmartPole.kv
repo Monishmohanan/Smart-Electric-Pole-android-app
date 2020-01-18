@@ -1,0 +1,164 @@
+WindowManager:
+	CreateAccount:
+	Login:
+	DashBoard:
+	OpenIssue:
+	IssueDetail:
+
+<CreateAccount>:
+	name: "create"
+
+	namee: kname
+	email: kemail
+	password: kpassword
+	password_again: kpassword_again
+
+	FloatLayout:
+
+		Label:
+			text: "Account Details"
+			size_hint: 0.5, 0.5
+			font_size: "30sp"
+			pos_hint: {"x":0.25, "y":0.6}
+
+		Label:
+			text: "Name: "
+			size_hint: 0.5, 0.3
+			pos_hint: {"x":0.005, "y":0.6}
+
+		TextInput:
+			id: kname
+			multiline: False
+			size_hint: 0.4, 0.05
+			pos_hint: {"x": 0.45, "y":0.725}
+
+		Label:
+			text: "Email: "
+			multiline: False
+			size_hint: 0.5, 0.3
+			pos_hint: {"x":0.005, "y":0.52}
+
+		TextInput:
+			id: kemail
+			size_hint: 0.4, 0.05
+			multiline: False
+			pos_hint: {"x":0.45, "y":0.645}
+
+		Label:
+			text: "Password: "
+			size_hint: 0.5, 0.3
+			pos_hint: {"x":0.005, "y":0.44}
+
+		TextInput:
+			id: kpassword
+			password: True
+			multiline: False
+			size_hint: 0.4, 0.05
+			pos_hint: {"x":0.45, "y":0.565}
+
+		Label:
+			text: "Re-Password: "
+			size_hint: 0.5, 0.3
+			pos_hint: {"x":0.005, "y":0.36}
+
+		TextInput:
+			id: kpassword_again
+			password: True
+			multiline: False
+			size_hint: 0.4, 0.05
+			pos_hint: {"x":0.45, "y":0.485}
+
+		Button:
+			text: "Save"
+			size_hint: 0.3, 0.05
+			pos_hint: {"x":0.35, "y": 0.38}
+			on_release:
+				root.manager.transition.direction  = "right"
+				root.save()
+
+		Button:
+			text: "Already Have an Account? Sign In"
+			size_hint: 0.8, 0.05
+			pos_hint: {"x":0.1, "y":0.28}
+			on_release:
+				root.manager.transition.direction = "right"
+				root.cancel()
+
+
+
+
+<Login>:
+	name: "login"
+
+
+
+	FloatLayout:
+
+		Label:
+			text: "SMART ELECTRIC"
+			font_size: "30sp"
+			size_hint: 0.4, 0.3
+			pos_hint: {"x":0.3, "y":0.7}
+
+		Label:
+			text: "POLE SYSTEM"
+			font_size: "30sp"
+			size_hint: 0.4, 0.3
+			pos_hint: {"x":0.3, "y":0.6}
+
+		Label:
+			text: "Username:"
+			size_hint: 0.5, 0.3
+			pos_hint: {"x":0.005, "y":0.4}
+
+		TextInput:
+			id: username
+			multiline: False
+			size_hint: 0.4, 0.05
+			pos_hint: {"x":0.45, "y":0.523}
+
+		Label:
+			text: "Password: "
+			size_hint: 0.5, 0.3
+			pos_hint: {"x":0.005, "y":0.3}
+
+		TextInput:
+			id: passw
+			multiline: False
+			password: True
+			size_hint: 0.4, 0.05
+			pos_hint: {"x":0.45, "y":0.423}
+
+		Button:
+			text: "Login"
+			size_hint: 0.3, 0.05
+			pos_hint: {"x":0.35, "y":0.30}
+			on_release:
+				root.manager.transition.direction = "right"
+
+		Button:
+			text: "Create Account"
+			size_hint: 0.5, 0.045
+			pos_hint: {"x":0.25, "y":0.20}
+			on_release:
+				root.manager.transition.direction = "left"
+				root.create()
+
+
+<DashBoard>:
+	name: "dash"
+
+	FloatLayout:
+
+		Button:
+			text: "Log out"
+			size_hint: 0.5, 0.1
+			pos_hint: {"x":0.25, "y":0.2}
+			on_release:
+				root.manager.transition.direction = "right"
+
+<OpenIssue>:
+	name: "openissue"
+
+<IssueDetail>:
+	name: "detail"
